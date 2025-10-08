@@ -14,7 +14,7 @@ class InventoryPage {
       // Wait until the URL matches ".../inventory.html" - using RegEx not the exact string
       await this.page.waitForURL(/.*inventory\.html/);
       // Wait until at least the first product item is visible
-      await this.items.first().toBeVisible();
+      await this.items.first().waitFor({ state: 'visible' });
     }
   
     // Add a product to the cart by its name
