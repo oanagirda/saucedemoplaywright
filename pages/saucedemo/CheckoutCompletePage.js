@@ -6,6 +6,16 @@ class CheckoutCompletePage {
       this.backHome = page.getByRole('button', { name: 'Back Home' });
     }
   
+    //Wait for the completed-header to be visible
+    async waitForHeader() {
+      await this.header.waitFor({ state: 'visible' });
+    }
+
+    //Returns the header text to be verified in the test
+    async getHeaderText() {
+      return await this.header.textContent(); 
+    }
+
     // Verify that the order has been completed successfully
     async assertCompleted() {
       await this.header.waitFor({ state: 'visible' });
