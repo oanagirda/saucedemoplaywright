@@ -15,12 +15,6 @@ class CheckoutCompletePage {
     async getHeaderText() {
       return await this.header.textContent(); 
     }
-
-    // Verify that the order has been completed successfully
-    async assertCompleted() {
-      await this.header.waitFor({ state: 'visible' });
-      await expect(this.header).toHaveText('Thank you for your order!');
-    }
   
     // Click "Back Home" to return to the inventory page
     async goHome() {

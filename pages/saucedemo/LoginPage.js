@@ -9,7 +9,7 @@ class LoginPage {
     }
   
     // Navigate to the login page
-    async goto() {
+    async openLoginPage() {
       await this.page.goto('/'); //// Go to the base URL defined in playwright.config.js
       await this.page.waitForLoadState('domcontentloaded'); //// Wait until the DOM has finished loading
     }
