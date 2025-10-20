@@ -1,6 +1,9 @@
 pipeline {
-  agent any
+    agent any
   // Run the pipeline on any agent (mac, linux etc)
+    tools {
+        nodejs 'Node20'    
+    }
 
   options {
     timestamps() 
