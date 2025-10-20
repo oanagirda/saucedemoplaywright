@@ -1,6 +1,6 @@
 pipeline {
-  agent { label 'mac' } 
-  // Use a specific Jenkins agent (node) labeled 'mac' to run this pipeline
+  agent any
+  // Run the pipeline on any agent (mac, linux etc)
 
   options {
     timestamps() 
