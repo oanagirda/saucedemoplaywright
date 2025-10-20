@@ -17,9 +17,9 @@ const test = base.test.extend({
   // - receives Playwright's "page" object
   // - instantiates the LoginPage class with it
   // - makes it available in the test via "use"
-  loginPage: async ({ page }, use) => { await use(new LoginPage(page)); },
+  login: async ({ page }, use) => { await use(new LoginPage(page)); },
   inventory: async ({ page }, use) => { await use(new InventoryPage(page)); },
-  cartPage:  async ({ page }, use) => { await use(new CartPage(page)); },
+  cart:  async ({ page }, use) => { await use(new CartPage(page)); },
   checkout:  async ({ page }, use) => { await use(new CheckoutPage(page)); },
   overview:  async ({ page }, use) => { await use(new CheckoutOverviewPage(page)); },
   complete:  async ({ page }, use) => { await use(new CheckoutCompletePage(page)); },

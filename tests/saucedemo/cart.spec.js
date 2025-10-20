@@ -3,15 +3,15 @@ const { test, expect } = require("../../fixtures/test-fixtures");
 const { name } = require("../../playwright.config");
 
 test.describe("cart tests", () => {
-  test.beforeEach(async ({ loginPage, inventory }) => {
-    await loginPage.openLoginPage();
-    await loginPage.login();
+  test.beforeEach(async ({ login, inventory }) => {
+    await login.openLoginPage();
+    await login.login();
     await inventory.assertLoaded();
   });
 
   test("cart reflects multiple added products", async ({
     inventory,
-    cartPage,
+    cart,
   }) => {
     const products = ["Sauce Labs Bike Light", "Sauce Labs Bolt T-Shirt"];
     for (const product of products) {
@@ -19,7 +19,7 @@ test.describe("cart tests", () => {
     }
     await inventory.openCart();
     for (const product of products) {
-      await cartPage.assertContains(product);
+      await cart.assertContains(product);
     }
   });
 });

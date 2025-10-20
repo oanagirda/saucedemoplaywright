@@ -4,18 +4,17 @@ const { test, expect } = require("../../fixtures/test-fixtures");
 // Define a test suite for the end-to-end Checkout flow
 test.describe("Checkout E2E", () => {
 
-  test.beforeEach(async ({loginPage, inventory}) => {
+  test.beforeEach(async ({login, inventory}) => {
     //Go to login page and log in with default credentials
-    await loginPage.openLoginPage();
-    await loginPage.login();
+    await login.openLoginPage();
+    await login.login();
   })
 
   // Define a single test: buy a product from login to order completion
   test("buy a product e2e", async ({
     page,
-    loginPage,
     inventory,
-    cartPage,
+    cart,
     checkout,
     overview,
     complete,
@@ -34,8 +33,8 @@ test.describe("Checkout E2E", () => {
 
     //Open the cart and verify the product is inside
     await inventory.openCart();
-    await cartPage.assertContains(productName);
-    await cartPage.checkout();
+    await cart.assertContains(productName);
+    await cart.checkout();
 
     //Fill in checkout form with sample data
     await checkout.fillInfo({ first: "Testy", last: "Test", zip: "122344" });
@@ -50,11 +49,11 @@ test.describe("Checkout E2E", () => {
     await complete.goHome();
   });
 
-  test('checkout fields validation', async ({page, cartPage, inventory, checkout, overview}) => {
+  test('checkout fields validation', async ({page, cart, inventory, checkout, overview}) => {
     const productName = "Sauce Labs Bike Light";
     await inventory.addToCartByName(productName);
     await inventory.openCart();
-    await cartPage.checkout();
+    await cart.checkout();
     await checkout.fillInfo({first: '', last: '', zip: ''});
     await expect(page.getByText('Error: First Name is required')).toBeVisible();
   })

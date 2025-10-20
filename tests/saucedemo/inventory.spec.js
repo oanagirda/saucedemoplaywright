@@ -4,9 +4,9 @@ const { name } = require("../../playwright.config");
 
 test.describe("inventory", () => {
   // Test case: Verify filtering products by "Price: low to high"
-  test("filter Price low->high", async ({ page, loginPage, inventory }) => {
-    await loginPage.openLoginPage();
-    await loginPage.login();
+  test("filter Price low->high", async ({ page, login, inventory }) => {
+    await login.openLoginPage();
+    await login.login();
     //Verify inventory page is loaded
     await inventory.assertLoaded();
 
@@ -25,9 +25,9 @@ test.describe("inventory", () => {
     expect(nums).toEqual(sorted);
   });
 
-  test('add/remove toggles button and badge', async ({loginPage, inventory}) => {
-    await loginPage.openLoginPage();
-    await loginPage.login();
+  test('add/remove toggles button and badge', async ({login, inventory}) => {
+    await login.openLoginPage();
+    await login.login();
 
     await inventory.assertLoaded();
     await inventory.addToCartByName('Sauce Labs Backpack');
