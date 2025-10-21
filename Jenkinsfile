@@ -2,7 +2,7 @@ pipeline {
     agent any
   // Run the pipeline on any agent (mac, linux etc)
     tools {
-        nodejs 'Node20'    
+        nodejs 'Node25'    
     }
 
   options {
