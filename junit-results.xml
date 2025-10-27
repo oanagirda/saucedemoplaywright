@@ -1,0 +1,14 @@
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="14.200642">
+<testsuite name="setup/auth.setup.spec.ts" timestamp="2025-10-27T14:20:42.411Z" hostname="setup" tests="1" failures="0" skipped="0" time="4.805" errors="0">
+<testcase name="create storage state for standard_user" classname="setup/auth.setup.spec.ts" time="4.805">
+</testcase>
+</testsuite>
+<testsuite name="saucedemo/cart.spec.ts" timestamp="2025-10-27T14:20:42.411Z" hostname="chromium" tests="1" failures="0" skipped="0" time="6.549" errors="0">
+<testcase name="cart tests › cart reflects multiple added products" classname="saucedemo/cart.spec.ts" time="6.549">
+</testcase>
+</testsuite>
+<testsuite name="saucedemo/cart.spec.ts" timestamp="2025-10-27T14:20:42.411Z" hostname="webkit" tests="1" failures="0" skipped="0" time="7.695" errors="0">
+<testcase name="cart tests › cart reflects multiple added products" classname="saucedemo/cart.spec.ts" time="7.695">
+</testcase>
+</testsuite>
+</testsuites>

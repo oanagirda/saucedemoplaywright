@@ -1,7 +1,7 @@
-// playwright.config.js
-const { defineConfig, devices } = require('@playwright/test');
+// playwright.config.ts
+import { defineConfig, devices } from '@playwright/test';
 
-module.exports = defineConfig({
+export default defineConfig({
   testDir: './tests',
   timeout: 30_000,
   expect: { timeout: 5_000 },
@@ -24,7 +24,7 @@ module.exports = defineConfig({
 
   projects: [
     // Setup project — creates storage/standard_user.json
-    { name: 'setup', testMatch: /auth\.setup\.spec\.js/ },
+    { name: 'setup', testMatch: /auth\.setup\.spec\.ts/ },
 
     // Chromium tests — re-use login state
     {
@@ -40,7 +40,7 @@ module.exports = defineConfig({
       dependencies: ['setup'],
     },
 
-    // local demo headed + slowMo
+    // // Local demo headed + slowMo (optional, pentru prezentări)
     // {
     //   name: 'demo',
     //   use: { ...devices['Desktop Chrome'], headless: false, launchOptions: { slowMo: 400 }, storageState: 'storage/standard_user.json' },
